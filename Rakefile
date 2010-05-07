@@ -7,9 +7,6 @@ begin
     gemspec.email = "aaron.gibralter@gmail.com"
     gemspec.homepage = "http://github.com/agibralter/outdated-gems"
     gemspec.authors = ["Aaron Gibralter"]
-    gemspec.add_dependency('json', '>= 1.4.0')
-    gemspec.add_dependency('monster_mash', '>= 0.1.0')
-    gemspec.add_dependency('versionomy', '>= 0.3.0')
     gemspec.files = Dir['lib/**/*', 'bin/*', 'outdated-gems.gemspec', 'VERSION', 'README']
   end
   Jeweler::GemcutterTasks.new
