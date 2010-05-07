@@ -1,3 +1,4 @@
+require 'thread'
 require 'yaml'
 require 'versionomy'
 require 'gemcutter_json'
@@ -15,6 +16,7 @@ if File.exists?(file)
   end
 
   outdated_gems = {}
+  m = Mutex.new
 
   hydra = Typhoeus::Hydra.new(:max_concurrency => 20)
   gemcutter = GemcutterJson.new(hydra)
@@ -25,7 +27,7 @@ if File.exists?(file)
         raise "Error fetching version for #{name} gem."
       else
         if Versionomy.parse(v_current) < Versionomy.parse(v_latest)
-          outdated_gems[name] = "#{v_current} => #{v_latest}"
+          m.synchronize { outdated_gems[name] = "#{v_current} => #{v_latest}" }
         end
       end
     end
