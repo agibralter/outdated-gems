@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Gibralter"]
-  s.date = %q{2010-05-06}
+  s.date = %q{2010-05-07}
   s.default_executable = %q{outdated_gems}
   s.description = %q{Run `outdated_gems` in a directory containing a Gemfile.lock and it will print the results.}
   s.email = %q{aaron.gibralter@gmail.com}
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
     "README",
      "VERSION",
      "bin/outdated_gems",
+     "lib/gemcutter_json.rb",
      "lib/outdated-gems.rb",
      "outdated-gems.gemspec"
   ]
@@ -36,16 +37,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<json>, [">= 1.4.0"])
-      s.add_runtime_dependency(%q<rest-client>, [">= 1.5.0"])
+      s.add_runtime_dependency(%q<monster_mash>, [">= 0.1.0"])
       s.add_runtime_dependency(%q<versionomy>, [">= 0.3.0"])
     else
       s.add_dependency(%q<json>, [">= 1.4.0"])
-      s.add_dependency(%q<rest-client>, [">= 1.5.0"])
+      s.add_dependency(%q<monster_mash>, [">= 0.1.0"])
       s.add_dependency(%q<versionomy>, [">= 0.3.0"])
     end
   else
     s.add_dependency(%q<json>, [">= 1.4.0"])
-    s.add_dependency(%q<rest-client>, [">= 1.5.0"])
+    s.add_dependency(%q<monster_mash>, [">= 0.1.0"])
     s.add_dependency(%q<versionomy>, [">= 0.3.0"])
   end
 end
