@@ -8,6 +8,7 @@ begin
     gemspec.homepage = "http://github.com/agibralter/outdated-gems"
     gemspec.authors = ["Aaron Gibralter"]
     gemspec.files = Dir['lib/**/*', 'bin/*', 'outdated-gems.gemspec', 'VERSION', 'README']
+    gemspec.add_dependency("bundler", ">= 0.9.26")
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
