@@ -1,3 +1,1 @@
-Given a Gemfile.lock, list gems that have new versions on rubyforge.org.
-
-Run `outdated_gems` in a directory containing a Gemfile.lock and it will print the results.
+Run `outdated_gems` after `bundle update`/`bundle install` to see which of your gems are outdated.
