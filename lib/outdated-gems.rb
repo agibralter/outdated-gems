@@ -8,8 +8,8 @@ if (bundle = `bundle show`) && !bundle.include?("Could not locate Gemfile")
   outdated_gems = {}
   outdated_edge_gems = {}
   unfound_gems = []
-  gem_list = Gem::SpecFetcher.new.list.values.first
-  edge_gem_list = Gem::SpecFetcher.new.list(false, true).values.first
+  gem_list = Gem::SpecFetcher.new.list.values.first.reverse
+  edge_gem_list = Gem::SpecFetcher.new.list(false, true).values.first.reverse
   gems.each do |name, v_current|
     latest_gem = gem_list.detect { |g| g.first == name }
     latest_edge_gem = edge_gem_list.detect { |g| g.first == name }
